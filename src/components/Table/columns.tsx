@@ -1,6 +1,6 @@
 import { MRT_ColumnDef } from 'material-react-table';
 import { User } from '@/types/userTypes';
-import ActionButton from '../ActionButton';
+import ActionButtonCell from '../ActionCell';
 
 export const columns: MRT_ColumnDef<User>[] = [
   {
@@ -16,8 +16,8 @@ export const columns: MRT_ColumnDef<User>[] = [
     header: 'Email',
   },
   {
-    id: 'Actions',
+    id: 'actions',
     header: '',
-    Cell: ({ row, table }) => <ActionButton row={row} table={table} />,
+    Cell: ActionButtonCell,
   },
 ];

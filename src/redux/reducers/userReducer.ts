@@ -4,7 +4,7 @@ import { User, UserState } from '@/types/userTypes'
 
 const initialState: UserState = {
   allUsers: [],
-  loading: false,
+  loading: true,
   error: null,
 }
 

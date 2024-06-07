@@ -1,9 +1,6 @@
 import React from 'react'
 import { MaterialReactTable, useMaterialReactTable } from 'material-react-table'
-import { MRT_Localization_ES } from 'material-react-table/locales/es'
 import { User } from '@/types/userTypes'
-import { columns } from '@/components/Table/columns'
-import Button from '../Button'
 
 interface CustomTableProps {
   data: User[]

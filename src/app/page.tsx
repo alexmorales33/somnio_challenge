@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { getAllUsers } from "@/redux/actions/userActions";
 import { columns } from "@/components/Table/columns";
 import CustomTable from "@/components/Table";
+import Loader from '@/components/Loader';
 
 export default function Home() {
   const dispatch = useAppDispatch()
@@ -16,15 +17,14 @@ export default function Home() {
 
   useEffect(() => {
     if (!loading && !error) {
-      console.log('allUsers', allUsers)
     }
   }, [allUsers, loading, error])
 
-  if (loading) return <p>Loading...</p>
+  if (loading) return <Loader />;
   if (error) return <p>{error}</p>
 
   return (
-    <main className="h-full w-full flex flex-col items-center justify-center">
+    <main className="h-full w-full flex flex-col items-center justify-center p-4 md:p-0">
       <div className="w-full h-16 lg:w-3/4 xl:w-2/3 flex items-center justify-start">
         <p className="font-semibold text-2xl">
           Users

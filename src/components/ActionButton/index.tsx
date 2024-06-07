@@ -15,7 +15,6 @@ const ActionButton: React.FC<ActionButtonProps> = ({ row, table }) => {
 
   const handleActionClick = () => {
     dispatch(deleteUser(row.original.id));
-    console.log('Button clicked for user:', row.original);
   };
 
   return (
