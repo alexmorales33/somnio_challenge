@@ -15,6 +15,9 @@ const userSlice = createSlice({
     clearError: state => {
       state.error = null
     },
+    deleteUser: (state, action: PayloadAction<number>) => {
+      state.allUsers = state.allUsers.filter(user => user.id !== action.payload)
+    },
   },
   extraReducers: builder => {
     builder
@@ -34,6 +37,6 @@ const userSlice = createSlice({
   },
 })
 
-export const { clearError } = userSlice.actions
+export const { clearError, deleteUser } = userSlice.actions
 
 export default userSlice.reducer

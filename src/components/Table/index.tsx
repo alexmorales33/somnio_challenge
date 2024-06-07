@@ -1,9 +1,9 @@
-// components/CustomTable.tsx
 import React from 'react'
 import { MaterialReactTable, useMaterialReactTable } from 'material-react-table'
 import { MRT_Localization_ES } from 'material-react-table/locales/es'
 import { User } from '@/types/userTypes'
 import { columns } from '@/components/Table/columns'
+import Button from '../Button'
 
 interface CustomTableProps {
   data: User[]
@@ -14,9 +14,8 @@ const CustomTable: React.FC<CustomTableProps> = ({ data, columns }) => {
   const tableInstance = useMaterialReactTable({
     columns,
     data,
-    initialState: { pagination: { pageSize: 7, pageIndex: 0 }, globalFilter: '', showGlobalFilter: true,},
+    initialState: { pagination: { pageSize: 5, pageIndex: 0 }, globalFilter: '', showGlobalFilter: true,},
     enablePagination: true,
-    enableColumnResizing: true,
     columnFilterModeOptions: null,
     enableColumnActions: false,
     enableColumnDragging: false,
@@ -38,6 +37,11 @@ const CustomTable: React.FC<CustomTableProps> = ({ data, columns }) => {
     muiTablePaperProps: {
       sx: {
         boxShadow: '0',
+      },
+    },
+    muiTableHeadCellProps: {
+      sx: {
+        color: '#9CA3AF',
       },
     },
     muiTableContainerProps: {

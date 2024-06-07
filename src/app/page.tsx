@@ -25,7 +25,7 @@ export default function Home() {
 
   return (
     <main className="h-full w-full flex flex-col items-center justify-center">
-      <div className="w-full h-20 lg:w-3/4 xl:w-2/3 flex items-center justify-start">
+      <div className="w-full h-16 lg:w-3/4 xl:w-2/3 flex items-center justify-start">
         <p className="font-semibold text-2xl">
           Users
         </p>
