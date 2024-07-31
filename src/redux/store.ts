@@ -1,8 +1,10 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import userReducer from './reducers/userReducer'
+import taskReducers from './reducers/taskReducers'
 
 const rootReducer = combineReducers({
     user: userReducer,
+    taskLists: taskReducers,
 })
 
 export const makeStore = () => {

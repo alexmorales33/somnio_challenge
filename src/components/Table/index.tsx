@@ -1,10 +1,10 @@
 import React from 'react';
 import { MaterialReactTable, useMaterialReactTable } from 'material-react-table';
-import { User } from '@/types/userTypes';
 import { useTheme } from '@mui/material/styles';
+import { TasksList } from '@/types/taskTypes';
 
 interface CustomTableProps {
-  data: User[];
+  data: TasksList[];
   columns: any;
 }
 
@@ -28,7 +28,7 @@ const CustomTable: React.FC<CustomTableProps> = ({ data, columns }) => {
     enableFilterMatchHighlighting: true,
     positionGlobalFilter: 'left',
     muiSearchTextFieldProps: {
-      placeholder: 'Search users...',
+      placeholder: 'Search tasks...',
       autoFocus: true,
     },
     muiPaginationProps: {

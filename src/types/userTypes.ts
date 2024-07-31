@@ -16,20 +16,10 @@ export interface Company {
     catchPhrase: string;
     bs: string;
 }
-  
-export interface User {
-    id: number;
-    name: string;
+
+export interface LoginResponse {
     username: string;
     email: string;
-    address: Address;
-    phone: string;
-    website: string;
-    company: Company;
-}
-  
-export interface UserState {
-    allUsers: User[];
-    loading: boolean;
-    error: string | null;
+    full_name: null,
+    disabled: boolean
 }

@@ -1,23 +1,33 @@
 import { MRT_ColumnDef } from 'material-react-table';
-import { User } from '@/types/userTypes';
 import ActionButtonCell from '../ActionCell';
 
-export const columns: MRT_ColumnDef<User>[] = [
+export const columns: MRT_ColumnDef<any>[] = [
   {
-    accessorKey: 'name',
-    header: 'Name',
+    accessorKey: 'title',
+    header: 'Titulo',
   },
   {
-    accessorKey: 'username',
-    header: 'Username',
+    accessorKey: 'description',
+    header: 'Descripcion',
   },
   {
-    accessorKey: 'email',
-    header: 'Email',
-  },
-  {
-    id: 'actions',
+    id: 'actionsDelete',
     header: '',
-    Cell: ActionButtonCell,
+    Cell: (props) => <ActionButtonCell {...props} buttonText="Eliminar" />,
+  },
+  {
+    id: 'actionsEdit',
+    header: '',
+    Cell: (props) => <ActionButtonCell {...props} buttonText="Editar" />,
+  },
+  {
+    id: 'actionsDetail',
+    header: '',
+    Cell: (props) => <ActionButtonCell {...props} buttonText="Ver Detalle" />,
+  },
+  {
+    id: 'actionsTask',
+    header: '',
+    Cell: (props) => <ActionButtonCell {...props} buttonText="Agregar Tarea" />,
   },
 ];

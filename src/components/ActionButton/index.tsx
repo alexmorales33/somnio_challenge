@@ -1,25 +1,30 @@
 import React from 'react';
 import Button from '@/components/Button';
-import { User } from '@/types/userTypes';
 import { useAppDispatch } from '@/redux/hooks';
 import { MRT_Row, MRT_TableInstance } from 'material-react-table';
-import { deleteUser } from '@/redux/reducers/userReducer';
+import { deleteTaskList } from '@/redux/actions/taskActions';
+import { TasksList } from '@/types/taskTypes';
+/* import { deleteUser } from '@/redux/reducers/userReducer'; */
 
 interface ActionButtonProps {
-  row: MRT_Row<User>;
-  table: MRT_TableInstance<User>;
+  row: MRT_Row<TasksList>;
+  table: MRT_TableInstance<TasksList>;
+  buttonText: string;
 }
 
-const ActionButton: React.FC<ActionButtonProps> = ({ row, table }) => {
+const ActionButton: React.FC<ActionButtonProps> = ({ row, table, buttonText }) => {
   const dispatch = useAppDispatch();
 
   const handleActionClick = () => {
-    dispatch(deleteUser(row.original.id));
+    if (buttonText === 'Eliminar') {
+      console.log('delete', (row.original.id))
+      dispatch(deleteTaskList(row.original.id));
+    }
   };
 
   return (
     <Button
-      text="Delete"
+      text={buttonText}
       onClick={handleActionClick}
     />
   );
